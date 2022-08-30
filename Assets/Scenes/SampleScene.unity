@@ -800,6 +800,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 736950530}
   m_CullTransparentMesh: 1
+--- !u!1 &756541996
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 756541998}
+  - component: {fileID: 756541997}
+  m_Layer: 0
+  m_Name: CardDatabase
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &756541997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 756541996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5cebe26afefafd4d8ada0871da7b1bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &756541998
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 756541996}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.6982677, y: -0.18836574, z: 1187.4729}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1051561155
 GameObject:
   m_ObjectHideFlags: 0
@@ -1701,6 +1745,7 @@ GameObject:
   - component: {fileID: 2046145321}
   - component: {fileID: 2046145323}
   - component: {fileID: 2046145322}
+  - component: {fileID: 2046145324}
   m_Layer: 5
   m_Name: Card
   m_TagString: Untagged
@@ -1767,6 +1812,33 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2046145320}
   m_CullTransparentMesh: 1
+--- !u!114 &2046145324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2046145320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 066229edb1ecb8a45bba8b8a94cde1a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  displayCard: []
+  displayID: 2
+  id: 0
+  cardName: 
+  image: 
+  description: 
+  attack: 0
+  hp: 0
+  cost: 0
+  speed: 0
+  nameText: {fileID: 1406634462}
+  descriptionText: {fileID: 334950592}
+  attackText: {fileID: 1104679052}
+  hpText: {fileID: 2069569865}
+  costText: {fileID: 1639541156}
 --- !u!1 &2069569863
 GameObject:
   m_ObjectHideFlags: 0
