@@ -19,12 +19,15 @@ public class DisplayCard : MonoBehaviour
     public int hp;
     public int cost;
     public int speed;
+    public Sprite spriteImage;
 
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI descriptionText;
     public TextMeshProUGUI attackText;
     public TextMeshProUGUI hpText;
     public TextMeshProUGUI costText;
+    public Image cardImage;
+    public Image speedImage;
 
 
     // Start is called before the first frame update
@@ -44,12 +47,25 @@ public class DisplayCard : MonoBehaviour
         hp = displayCard[0].Hp;
         cost = displayCard[0].Cost;
         speed = displayCard[0].Speed;
+        spriteImage = displayCard[0].SpriteImage;
 
         nameText.text = " " + cardName;
         descriptionText.text = " " + description;
         attackText.text = " " + attack;
         hpText.text = " " + hp;
         costText.text = " " + cost;
- 
+        cardImage.sprite = spriteImage;
+        switch (speed)
+        {
+            case 3:
+                speedImage.sprite = Resources.Load<Sprite>("mental");
+                break;
+            case 2:
+                speedImage.sprite = Resources.Load<Sprite>("ranged");
+                break;
+            default:
+                speedImage.sprite = Resources.Load<Sprite>("melee");
+                break;
+        }
     }
 }

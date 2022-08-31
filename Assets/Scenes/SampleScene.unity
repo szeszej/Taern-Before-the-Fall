@@ -347,7 +347,7 @@ GameObject:
   - component: {fileID: 350387972}
   - component: {fileID: 350387971}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Speed Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -386,7 +386,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1834,11 +1834,14 @@ MonoBehaviour:
   hp: 0
   cost: 0
   speed: 0
+  spriteImage: {fileID: 0}
   nameText: {fileID: 1406634462}
   descriptionText: {fileID: 334950592}
   attackText: {fileID: 1104679052}
   hpText: {fileID: 2069569865}
   costText: {fileID: 1639541156}
+  cardImage: {fileID: 1661922588}
+  speedImage: {fileID: 350387971}
 --- !u!1 &2069569863
 GameObject:
   m_ObjectHideFlags: 0
