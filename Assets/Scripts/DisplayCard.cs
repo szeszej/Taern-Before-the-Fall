@@ -29,25 +29,24 @@ public class DisplayCard : MonoBehaviour
     public Image cardImage;
     public Image speedImage;
 
+    public bool FaceDown;
+    public static bool staticCardBack;
+
 
     // Start is called before the first frame update
     void Start()
     {
         displayCard[0] = CardDatabase.cardList[displayID];
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        id = displayCard[0].Id;
-        cardName = displayCard[0].CardName;
-        image = displayCard[0].Image;
-        description = displayCard[0].Description;
-        attack = displayCard[0].Attack;
-        hp = displayCard[0].Hp;
-        cost = displayCard[0].Cost;
-        speed = displayCard[0].Speed;
-        spriteImage = displayCard[0].SpriteImage;
+        id = displayCard[0].id;
+        cardName = displayCard[0].cardName;
+        image = displayCard[0].image;
+        description = displayCard[0].description;
+        attack = displayCard[0].attack;
+        hp = displayCard[0].hp;
+        cost = displayCard[0].cost;
+        speed = displayCard[0].speed;
+        spriteImage = displayCard[0].spriteImage;
 
         nameText.text = " " + cardName;
         descriptionText.text = " " + description;
@@ -67,5 +66,13 @@ public class DisplayCard : MonoBehaviour
                 speedImage.sprite = Resources.Load<Sprite>("melee");
                 break;
         }
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+        staticCardBack = FaceDown;
+
     }
 }

@@ -59,6 +59,8 @@
     <Compile Include="Assets\Scripts\CardDatabase.cs" />
     <Compile Include="Assets\Scripts\DisplayCard.cs" />
     <Compile Include="Assets\Scripts\Card.cs" />
+    <Compile Include="Assets\Scripts\PlayerDeck.cs" />
+    <Compile Include="Assets\Scripts\CardBack.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
