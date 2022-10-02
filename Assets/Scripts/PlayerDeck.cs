@@ -21,6 +21,12 @@ public class PlayerDeck : MonoBehaviour
     public GameObject cardInDeck9;
     public GameObject cardInDeck10;
 
+    public GameObject Hand;
+
+    public delegate void CardDrawn();
+    public static event CardDrawn cardWasDrawn;
+
+
 
     void Start()
     {
@@ -32,6 +38,7 @@ public class PlayerDeck : MonoBehaviour
             deck.Add(CardDatabase.cardList[x]);
 
         }
+        StartCoroutine(StartGame());
 
     }
 
@@ -74,6 +81,21 @@ public class PlayerDeck : MonoBehaviour
 
     }
 
+    IEnumerator StartGame()
+    {
+        for (int i = 0; i < 4; i++)
+        {
+            yield return new WaitForSeconds(1);
+            Draw();
+        }
+    }
+
+    public void Draw()
+    {
+        Hand.GetComponent<PlayerHand>().handList.Add(deck[0]);
+        deck.RemoveAt(0);
+        if (cardWasDrawn != null) cardWasDrawn();
+    }
 
     public void Shuffle()
     {

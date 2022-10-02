@@ -8,7 +8,7 @@ using UnityEngine.EventSystems;
 public class DisplayCard : MonoBehaviour
 {
 
-    public List<Card> displayCard = new List<Card>();
+    public Card displayCard;
     public int displayID;
 
     public int id;
@@ -32,21 +32,32 @@ public class DisplayCard : MonoBehaviour
     public bool FaceDown;
     public static bool staticCardBack;
 
+    public GameObject Hand;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        displayCard[0] = CardDatabase.cardList[displayID];
 
-        id = displayCard[0].id;
-        cardName = displayCard[0].cardName;
-        image = displayCard[0].image;
-        description = displayCard[0].description;
-        attack = displayCard[0].attack;
-        hp = displayCard[0].hp;
-        cost = displayCard[0].cost;
-        speed = displayCard[0].speed;
-        spriteImage = displayCard[0].spriteImage;
+        
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+        displayCard = CardDatabase.cardList[displayID];
+
+        id = displayCard.id;
+        cardName = displayCard.cardName;
+        image = displayCard.image;
+        description = displayCard.description;
+        attack = displayCard.attack;
+        hp = displayCard.hp;
+        cost = displayCard.cost;
+        speed = displayCard.speed;
+        spriteImage = displayCard.spriteImage;
 
         nameText.text = " " + cardName;
         descriptionText.text = " " + description;
@@ -54,6 +65,7 @@ public class DisplayCard : MonoBehaviour
         hpText.text = " " + hp;
         costText.text = " " + cost;
         cardImage.sprite = spriteImage;
+
         switch (speed)
         {
             case 3:
@@ -66,13 +78,16 @@ public class DisplayCard : MonoBehaviour
                 speedImage.sprite = Resources.Load<Sprite>("melee");
                 break;
         }
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
+        Hand = GameObject.Find("Hand");
+
+        if (this.transform.parent == Hand.transform.parent)
+        {
+            FaceDown = false;
+        }
 
         staticCardBack = FaceDown;
+
 
     }
 }
