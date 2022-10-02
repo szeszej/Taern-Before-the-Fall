@@ -23,16 +23,9 @@ public class PlayerHand : MonoBehaviour
     // Update is called once per frame
     void PopulateHand()
     {
-        int childs = transform.childCount;
-        for (int i = 0; i <childs; i++)
-        {
-            GameObject.Destroy(transform.GetChild(i).gameObject);
-        }
-        for (int i = 0; i < handList.Count; i++)
-        {
+
             NewCard = Instantiate(CardInHand, transform.position, transform.rotation);
-            NewCard.GetComponent<DisplayCard>().displayID = handList[i].id;
-        }
+            NewCard.GetComponent<DisplayCard>().displayID = handList[handList.Count - 1].id;
 
     }
 
