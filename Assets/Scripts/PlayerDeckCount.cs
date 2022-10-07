@@ -8,25 +8,37 @@ using UnityEngine.EventSystems;
 public class PlayerDeckCount : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
 
-    public GameObject cardCounter;
-    public TextMeshProUGUI cardCounterText;
-    public GameObject playerDeck; 
-
+    
+    public GameObject PlayerDeck;
+    public GameObject Opponent;
+    public GameObject PlayerDeckPanel;
+    public GameObject OpponentDeckPanel;
+    public GameObject DeckCounter;
+    public TextMeshProUGUI CounterText;
 
     private void Start()
     {
-        cardCounter.SetActive(false);
+        print(this.name);
         
     }
 
     void IPointerEnterHandler.OnPointerEnter(PointerEventData eventData)
     {
-        cardCounterText.text = playerDeck.GetComponent<PlayerDeck>().deck.Count.ToString();
-        cardCounter.SetActive(true);
+
+        if (eventData.pointerEnter == PlayerDeckPanel)
+        {
+            DeckCounter.SetActive(true);
+            CounterText.text = PlayerDeck.GetComponent<PlayerDeck>().deck.Count.ToString();
+        }
+        else if (eventData.pointerEnter == OpponentDeckPanel)
+        {
+            DeckCounter.SetActive(true);
+            CounterText.text = Opponent.GetComponent<Opponent>().deckSize.ToString();
+        }
     }
 
     void IPointerExitHandler.OnPointerExit(PointerEventData eventData)
     {
-        cardCounter.SetActive(false);
+        DeckCounter.SetActive(false);
     }
 }
