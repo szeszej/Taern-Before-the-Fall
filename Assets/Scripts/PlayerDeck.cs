@@ -30,15 +30,11 @@ public class PlayerDeck : MonoBehaviour
 
     void Start()
     {
-        int x;
-
         for (int i = 0; i < 30; i++)
         {
-            x = Random.Range(0, 5);
-            deck.Add(CardDatabase.cardList[x]);
-
+            deck.Add(CardDatabase.cardList[Random.Range(0, 5)]);
         }
-        StartCoroutine(StartGame());
+        StartGame();
 
     }
 
@@ -81,20 +77,22 @@ public class PlayerDeck : MonoBehaviour
 
     }
 
-    IEnumerator StartGame()
+    public void StartGame()
     {
-        for (int i = 0; i < 4; i++)
-        {
-            yield return new WaitForSeconds(1);
-            Draw();
-        }
+        StartCoroutine(Draw(4));
     }
 
-    public void Draw()
+    public IEnumerator Draw(int number)
     {
-        Hand.GetComponent<PlayerHand>().handList.Add(deck[0]);
-        deck.RemoveAt(0);
-        if (cardWasDrawn != null) cardWasDrawn();
+        for (int i = 0; i < number; i++)
+        {
+            
+            yield return new WaitForSeconds(1);
+            Hand.GetComponent<PlayerHand>().handList.Add(deck[0]);
+            deck.RemoveAt(0);
+            if (cardWasDrawn != null) cardWasDrawn();
+        }
+ 
     }
 
     public void Shuffle()

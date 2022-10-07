@@ -24,8 +24,9 @@ public class PlayerHand : MonoBehaviour
     void PopulateHand()
     {
 
-            NewCard = Instantiate(CardInHand, transform.position, transform.rotation);
-            NewCard.GetComponent<DisplayCard>().displayID = handList[handList.Count - 1].id;
+        NewCard = Instantiate(CardInHand, transform.position, transform.rotation);
+        NewCard.GetComponent<DisplayCard>().displayID = handList[handList.Count - 1].id;
+
 
     }
 
