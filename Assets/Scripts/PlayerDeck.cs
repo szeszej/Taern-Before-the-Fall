@@ -79,20 +79,25 @@ public class PlayerDeck : MonoBehaviour
 
     public void StartGame()
     {
-        StartCoroutine(Draw(4));
+        StartCoroutine(DelayedDraw(4));
     }
 
-    public IEnumerator Draw(int number)
+    public IEnumerator DelayedDraw(int number)
     {
         for (int i = 0; i < number; i++)
         {
             
             yield return new WaitForSeconds(1);
-            Hand.GetComponent<PlayerHand>().handList.Add(deck[0]);
-            deck.RemoveAt(0);
-            if (cardWasDrawn != null) cardWasDrawn();
+            Draw(1);
         }
  
+    }
+
+    public void Draw(int number)
+    {
+        Hand.GetComponent<PlayerHand>().handList.Add(deck[0]);
+        deck.RemoveAt(0);
+        if (cardWasDrawn != null) cardWasDrawn();
     }
 
     public void Shuffle()

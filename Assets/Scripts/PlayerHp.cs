@@ -22,12 +22,6 @@ public class PlayerHp : MonoBehaviour
     void Update()
     {
         Health.fillAmount = currentHp / maxHp;
-
-        if (currentHp > maxHp)
-        {
-            currentHp = maxHp;
-        }
-
         hpText.text = currentHp.ToString();
     }
 
@@ -39,5 +33,9 @@ public class PlayerHp : MonoBehaviour
     public void Heal(int healing)
     {
         currentHp += healing;
+        if (currentHp > maxHp)
+        {
+            currentHp = maxHp;
+        }
     }
 }

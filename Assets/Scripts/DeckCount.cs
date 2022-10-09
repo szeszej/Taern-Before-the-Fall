@@ -5,7 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class PlayerDeckCount : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class DeckCount : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
 
     
@@ -18,8 +18,7 @@ public class PlayerDeckCount : MonoBehaviour, IPointerEnterHandler, IPointerExit
 
     private void Start()
     {
-        print(this.name);
-        
+
     }
 
     void IPointerEnterHandler.OnPointerEnter(PointerEventData eventData)

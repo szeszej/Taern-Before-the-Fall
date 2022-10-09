@@ -58,6 +58,6 @@ public class TurnSystem : MonoBehaviour
         maxMana += 1;
         currentMana = maxMana;
         turnText.text = "Turn: " + turn.ToString();
-        StartCoroutine(playerDeck.GetComponent<PlayerDeck>().Draw(1));
+        playerDeck.GetComponent<PlayerDeck>().Draw(1);
     }
 }
