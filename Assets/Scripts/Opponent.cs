@@ -10,6 +10,8 @@ public class Opponent : MonoBehaviour
     public int deckSize;
     public int handSize;
     public int hp;
+    public int maxMana;
+    public int currentMana;
 
     public GameObject cardInDeck1;
     public GameObject cardInDeck2;
@@ -30,12 +32,16 @@ public class Opponent : MonoBehaviour
     public GameObject CardBack;
     public GameObject NewCard;
 
+    public TextMeshProUGUI manaText;
+
     // Start is called before the first frame update
     void Start()
     {
         deckSize = 26;
         handSize = 4;
         hp = 30;
+        currentMana = 1;
+        maxMana = 1;
         for (int i = 0; i < 4; i++)
         {
             NewCard = Instantiate(CardBack, transform.position, transform.rotation);
@@ -45,6 +51,9 @@ public class Opponent : MonoBehaviour
             NewCard.transform.Rotate(new Vector3(180, 0));
 
         }
+
+        hpText.text = hp.ToString();
+        manaText.text = currentMana.ToString() + "/" + maxMana.ToString();
     }
 
     // Update is called once per frame

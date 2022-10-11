@@ -26,12 +26,6 @@ public class DisplayCard : MonoBehaviour
     public Image cardImage;
     public Image speedImage;
 
-    public bool FaceDown;
-    public static bool staticCardBack;
-
-    public GameObject Hand;
-
-
     // Start is called before the first frame update
     void Start()
     {
@@ -75,16 +69,7 @@ public class DisplayCard : MonoBehaviour
                 speedImage.sprite = Resources.Load<Sprite>("melee");
                 break;
         }
-
-        Hand = GameObject.Find("Hand");
-
-        if (this.transform.parent == Hand.transform.parent)
-        {
-            FaceDown = false;
-        }
-
-        staticCardBack = FaceDown;
-
+      
 
     }
 }
