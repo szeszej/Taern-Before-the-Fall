@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerHand : MonoBehaviour
 {
 
-    public List<Card> handList = new();
+
     public GameObject Hand;
     public GameObject CardInHand;
     public GameObject NewCard;
@@ -21,12 +21,11 @@ public class PlayerHand : MonoBehaviour
     }
 
     // Update is called once per frame
-    void PopulateHand()
+    void PopulateHand(Card card)
     {
 
         NewCard = Instantiate(CardInHand, transform.position, transform.rotation);
-        NewCard.GetComponent<DisplayCard>().displayID = handList[handList.Count - 1].id;
-
+        NewCard.GetComponent<DisplayCard>().displayCard = card;
 
     }
 

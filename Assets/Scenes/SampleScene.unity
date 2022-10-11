@@ -153,8 +153,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2138422089}
-  m_RootOrder: 3
+  m_Father: {fileID: 1051561159}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -725,7 +725,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19aec9dfa10f06542ae28ac2a10cf3d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  battlefield: {fileID: 0}
+  Battlefield: {fileID: 1860054729}
+  DiscardPile: {fileID: 865180494}
 --- !u!114 &182884852
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -802,7 +803,7 @@ GameObject:
   - component: {fileID: 216986754}
   - component: {fileID: 216986753}
   - component: {fileID: 216986752}
-  m_Layer: 6
+  m_Layer: 5
   m_Name: Take Damage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1078,7 +1079,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19aec9dfa10f06542ae28ac2a10cf3d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  battlefield: {fileID: 0}
+  Battlefield: {fileID: 1860054729}
+  DiscardPile: {fileID: 865180494}
 --- !u!114 &269337759
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1155,7 +1157,7 @@ GameObject:
   - component: {fileID: 289001365}
   - component: {fileID: 289001364}
   - component: {fileID: 289001363}
-  m_Layer: 6
+  m_Layer: 5
   m_Name: Shuffle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1442,7 +1444,7 @@ GameObject:
   - component: {fileID: 365280472}
   - component: {fileID: 365280471}
   - component: {fileID: 365280470}
-  m_Layer: 6
+  m_Layer: 5
   m_Name: SetupPhase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1703,7 +1705,7 @@ RectTransform:
   m_Children:
   - {fileID: 1167684073}
   m_Father: {fileID: 2138422089}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2261,7 +2263,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f8fd4c8be3c8db418bc2374fe70d5e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  handList: []
   Hand: {fileID: 604724711}
   CardInHand: {fileID: 450435107724423964, guid: 6e727c4be24bacf4ba930b5f4eaeec96, type: 3}
   NewCard: {fileID: 450435107724423964, guid: 6e727c4be24bacf4ba930b5f4eaeec96, type: 3}
@@ -2822,6 +2823,123 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf2e9519aca65fc4a9c68ce659467e62, type: 3}
+--- !u!1 &865180494
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 865180495}
+  - component: {fileID: 865180498}
+  - component: {fileID: 865180497}
+  - component: {fileID: 865180496}
+  - component: {fileID: 865180499}
+  m_Layer: 5
+  m_Name: DiscardPile
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &865180495
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 865180494}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 924671251}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -112, y: 122}
+  m_SizeDelta: {x: 288.04004, y: 315.81}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &865180496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 865180494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 0
+  m_Spacing: -160
+  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandHeight: 1
+  m_ChildControlWidth: 0
+  m_ChildControlHeight: 0
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
+  m_ReverseArrangement: 0
+--- !u!114 &865180497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 865180494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &865180498
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 865180494}
+  m_CullTransparentMesh: 1
+--- !u!114 &865180499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 865180494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81130c20ca247494f972dd893943e483, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardsInDiscard: []
 --- !u!1 &884343683
 GameObject:
   m_ObjectHideFlags: 0
@@ -2932,6 +3050,7 @@ RectTransform:
   - {fileID: 1567250950}
   - {fileID: 1261627236}
   - {fileID: 721548251}
+  - {fileID: 865180495}
   m_Father: {fileID: 1051561159}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3206,6 +3325,7 @@ MonoBehaviour:
   hp: 0
   maxMana: 0
   currentMana: 0
+  cardsInDiscard: []
   cardInDeck1: {fileID: 744718539}
   cardInDeck2: {fileID: 602399935}
   cardInDeck3: {fileID: 964570231}
@@ -3498,7 +3618,7 @@ GameObject:
   - component: {fileID: 1041064009}
   - component: {fileID: 1041064008}
   - component: {fileID: 1041064007}
-  m_Layer: 6
+  m_Layer: 5
   m_Name: Heal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3631,7 +3751,7 @@ GameObject:
   - component: {fileID: 1049145696}
   - component: {fileID: 1049145698}
   - component: {fileID: 1049145697}
-  m_Layer: 6
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3803,10 +3923,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -3850,6 +3970,8 @@ RectTransform:
   - {fileID: 924671251}
   - {fileID: 2138422089}
   - {fileID: 1860054730}
+  - {fileID: 1626363950}
+  - {fileID: 54382760}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3910,7 +4032,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19aec9dfa10f06542ae28ac2a10cf3d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  battlefield: {fileID: 0}
+  Battlefield: {fileID: 1860054729}
+  DiscardPile: {fileID: 865180494}
 --- !u!114 &1055101566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4423,7 +4546,7 @@ GameObject:
   - component: {fileID: 1198331466}
   - component: {fileID: 1198331465}
   - component: {fileID: 1198331464}
-  m_Layer: 6
+  m_Layer: 5
   m_Name: CombatPhase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5654,7 +5777,7 @@ GameObject:
   - component: {fileID: 1626363953}
   - component: {fileID: 1626363952}
   - component: {fileID: 1626363951}
-  m_Layer: 6
+  m_Layer: 5
   m_Name: Buttons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5679,13 +5802,13 @@ RectTransform:
   - {fileID: 1041064006}
   - {fileID: 365280469}
   - {fileID: 1198331463}
-  m_Father: {fileID: 1860054730}
-  m_RootOrder: 2
+  m_Father: {fileID: 1051561159}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 184, y: -9}
-  m_SizeDelta: {x: -1704.1599, y: -213.47998}
+  m_SizeDelta: {x: -1704.1598, y: -713.47986}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1626363951
 MonoBehaviour:
@@ -5762,7 +5885,7 @@ GameObject:
   - component: {fileID: 1661009241}
   - component: {fileID: 1661009243}
   - component: {fileID: 1661009242}
-  m_Layer: 6
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6276,11 +6399,11 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1860054730}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -128, y: 0}
+  m_AnchoredPosition: {x: -148, y: 0}
   m_SizeDelta: {x: 300, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1749909589
@@ -6392,7 +6515,7 @@ GameObject:
   - component: {fileID: 1787172247}
   - component: {fileID: 1787172246}
   - component: {fileID: 1787172245}
-  m_Layer: 6
+  m_Layer: 5
   m_Name: Draw
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6535,7 +6658,7 @@ GameObject:
   - component: {fileID: 1832223465}
   - component: {fileID: 1832223467}
   - component: {fileID: 1832223466}
-  m_Layer: 6
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6852,7 +6975,7 @@ GameObject:
   - component: {fileID: 1843550968}
   - component: {fileID: 1843550970}
   - component: {fileID: 1843550969}
-  m_Layer: 6
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7100,6 +7223,7 @@ GameObject:
   - component: {fileID: 1860054730}
   - component: {fileID: 1860054732}
   - component: {fileID: 1860054731}
+  - component: {fileID: 1860054733}
   m_Layer: 5
   m_Name: Battlefield
   m_TagString: Untagged
@@ -7121,7 +7245,6 @@ RectTransform:
   m_Children:
   - {fileID: 1839074482}
   - {fileID: 884343684}
-  - {fileID: 1626363950}
   - {fileID: 1749909588}
   m_Father: {fileID: 1051561159}
   m_RootOrder: 2
@@ -7169,6 +7292,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1860054729}
   m_CullTransparentMesh: 1
+--- !u!114 &1860054733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1860054729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52ec894059515ba478e5b86f4b72847b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardsOnBattlefield: []
+  opponentCardsOnBattlefield: []
 --- !u!1 &1869764706
 GameObject:
   m_ObjectHideFlags: 0
@@ -7568,7 +7705,7 @@ GameObject:
   - component: {fileID: 2000148214}
   - component: {fileID: 2000148216}
   - component: {fileID: 2000148215}
-  m_Layer: 6
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7877,7 +8014,7 @@ GameObject:
   - component: {fileID: 2043430541}
   - component: {fileID: 2043430543}
   - component: {fileID: 2043430542}
-  m_Layer: 6
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8049,7 +8186,6 @@ RectTransform:
   - {fileID: 1209709297}
   - {fileID: 1537917886}
   - {fileID: 1036800700}
-  - {fileID: 54382760}
   - {fileID: 431693831}
   m_Father: {fileID: 1051561159}
   m_RootOrder: 1

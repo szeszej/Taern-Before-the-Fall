@@ -23,7 +23,7 @@ public class PlayerDeck : MonoBehaviour
 
     public GameObject Hand;
 
-    public delegate void CardDrawn();
+    public delegate void CardDrawn(Card card);
     public static event CardDrawn cardWasDrawn;
 
 
@@ -95,9 +95,11 @@ public class PlayerDeck : MonoBehaviour
 
     public void Draw(int number)
     {
-        Hand.GetComponent<PlayerHand>().handList.Add(deck[0]);
-        deck.RemoveAt(0);
-        if (cardWasDrawn != null) cardWasDrawn();
+        for (int i = 0; i < number; i++)
+        {
+            if (cardWasDrawn != null) cardWasDrawn(deck[0]);
+            deck.RemoveAt(0);
+        }
     }
 
     public void Shuffle()

@@ -69,6 +69,7 @@
     <Compile Include="Assets\Scripts\DragCard.cs" />
     <Compile Include="Assets\Scripts\Battlefield.cs" />
     <Compile Include="Assets\Scripts\CardDropZone.cs" />
+    <Compile Include="Assets\Scripts\DiscardPile.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

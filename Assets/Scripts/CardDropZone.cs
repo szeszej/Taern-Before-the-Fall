@@ -7,7 +7,8 @@ using UnityEngine.UIElements;
 public class CardDropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerExitHandler
 {
 
-    public GameObject battlefield;
+    public GameObject Battlefield;
+    public GameObject DiscardPile;
 
     public void OnPointerEnter(PointerEventData eventData)
     {
@@ -16,17 +17,21 @@ public class CardDropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, I
 
     public void OnDrop(PointerEventData eventData)
     {
+        if (this.transform.childCount > 0)
+        {
+            this.transform.GetChild(0).SetParent(DiscardPile.transform);
+        }
         eventData.pointerDrag.transform.SetParent(this.transform);
         switch (this.name)
         {
             case "Slot1":
-                battlefield.GetComponent<Battlefield>().cardsOnBattlefield[0] = eventData.pointerDrag.GetComponent<DisplayCard>().displayCard;
+                Battlefield.GetComponent<Battlefield>().cardsOnBattlefield[0] = eventData.pointerDrag.GetComponent<DisplayCard>().displayCard;
                 break;
             case "Slot2":
-                battlefield.GetComponent<Battlefield>().cardsOnBattlefield[1] = eventData.pointerDrag.GetComponent<DisplayCard>().displayCard;
+                Battlefield.GetComponent<Battlefield>().cardsOnBattlefield[1] = eventData.pointerDrag.GetComponent<DisplayCard>().displayCard;
                 break;
             case "Slot3":
-                battlefield.GetComponent<Battlefield>().cardsOnBattlefield[2] = eventData.pointerDrag.GetComponent<DisplayCard>().displayCard;
+                Battlefield.GetComponent<Battlefield>().cardsOnBattlefield[2] = eventData.pointerDrag.GetComponent<DisplayCard>().displayCard;
                 break;
         }
     }

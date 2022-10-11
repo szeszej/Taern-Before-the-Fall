@@ -6,7 +6,6 @@ public class DisplayCard : MonoBehaviour
 {
 
     public Card displayCard;
-    public int displayID;
 
     public int id;
     public string cardName;
@@ -37,8 +36,6 @@ public class DisplayCard : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        displayCard = CardDatabase.cardList[displayID];
 
         id = displayCard.id;
         cardName = displayCard.cardName;

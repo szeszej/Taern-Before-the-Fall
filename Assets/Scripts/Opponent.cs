@@ -12,6 +12,7 @@ public class Opponent : MonoBehaviour
     public int hp;
     public int maxMana;
     public int currentMana;
+    public List<Card> cardsInDiscard;
 
     public GameObject cardInDeck1;
     public GameObject cardInDeck2;
