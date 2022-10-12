@@ -25,7 +25,7 @@ public class CardDropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, I
         {
             CardToDiscard = Instantiate(CardInDiscardPrefab, transform.position, transform.rotation);
             CardToDiscard.GetComponent<DisplayCard>().displayCard = CardDatabase.cardList[CardOnBattlefield.GetComponent<DisplayCard>().displayCard.id].Clone();
-            Destroy(CardOnBattlefield);
+            Destroy(CardOnBattlefield.gameObject);
             CardToDiscard.transform.SetParent(DiscardPile.transform);
             CardToDiscard.transform.localScale = Vector3.one;
             DiscardPile.GetComponent<DiscardPile>().cardsInDiscard.Add(CardToDiscard.GetComponent<DisplayCard>().displayCard);
@@ -33,10 +33,10 @@ public class CardDropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, I
         //in any case, a new look needs to be applied to the card so that it fits
         CardOnBattlefield = Instantiate(CardOnBattlefieldPrefab, transform.position, transform.rotation);
         CardOnBattlefield.GetComponent<DisplayCard>().displayCard = eventData.pointerDrag.GetComponent<DisplayCard>().displayCard;
-        CardOnBattlefield.GetComponent<CanvasGroup>().blocksRaycasts = false;
+        //CardOnBattlefield.GetComponent<CanvasGroup>().blocksRaycasts = false;
         CardOnBattlefield.transform.SetParent(gameObject.transform);
         CardOnBattlefield.transform.localScale = Vector3.one;
-        Destroy(eventData.pointerDrag);
+        Destroy(eventData.pointerDrag.gameObject);
 
         //the card needs to be added to the battlefield for combat purposes
         switch (this.name)

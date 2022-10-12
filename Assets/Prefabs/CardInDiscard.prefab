@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 450435107701514620}
   - component: {fileID: 450435107701514622}
   - component: {fileID: 450435107701514621}
+  - component: {fileID: 4058070042130278232}
   m_Layer: 5
   m_Name: HP
   m_TagString: Untagged
@@ -135,6 +136,18 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!225 &4058070042130278232
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 450435107701514611}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &450435107724423964
 GameObject:
   m_ObjectHideFlags: 0
@@ -147,6 +160,7 @@ GameObject:
   - component: {fileID: 450435107724423967}
   - component: {fileID: 450435107724423966}
   - component: {fileID: 450435107724423960}
+  - component: {fileID: -2919283824865079778}
   - component: {fileID: -1336091366684381}
   m_Layer: 5
   m_Name: CardInDiscard
@@ -243,6 +257,19 @@ MonoBehaviour:
   costText: {fileID: 450435107854723472}
   cardImage: {fileID: 450435107832737064}
   speedImage: {fileID: 450435109151096631}
+--- !u!114 &-2919283824865079778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 450435107724423964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e42d420e7c5a96488e7bfdd9fdc2c13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ZoomedCardPrefab: {fileID: 450435107724423964}
 --- !u!225 &-1336091366684381
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -253,7 +280,7 @@ CanvasGroup:
   m_Enabled: 1
   m_Alpha: 1
   m_Interactable: 1
-  m_BlocksRaycasts: 0
+  m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
 --- !u!1 &450435107832737070
 GameObject:
@@ -266,6 +293,7 @@ GameObject:
   - component: {fileID: 450435107832737071}
   - component: {fileID: 450435107832737065}
   - component: {fileID: 450435107832737064}
+  - component: {fileID: 4281979669640424674}
   m_Layer: 5
   m_Name: Card Image
   m_TagString: Untagged
@@ -331,6 +359,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!225 &4281979669640424674
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 450435107832737070}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &450435107854723478
 GameObject:
   m_ObjectHideFlags: 0
@@ -342,6 +382,7 @@ GameObject:
   - component: {fileID: 450435107854723479}
   - component: {fileID: 450435107854723473}
   - component: {fileID: 450435107854723472}
+  - component: {fileID: 6490805527953479471}
   m_Layer: 5
   m_Name: Cost
   m_TagString: Untagged
@@ -466,6 +507,18 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!225 &6490805527953479471
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 450435107854723478}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &450435107921628608
 GameObject:
   m_ObjectHideFlags: 0
@@ -477,6 +530,7 @@ GameObject:
   - component: {fileID: 450435107921628609}
   - component: {fileID: 450435107921628611}
   - component: {fileID: 450435107921628610}
+  - component: {fileID: 7433885623976699123}
   m_Layer: 5
   m_Name: Cost Border
   m_TagString: Untagged
@@ -543,6 +597,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!225 &7433885623976699123
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 450435107921628608}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &450435108095478248
 GameObject:
   m_ObjectHideFlags: 0
@@ -554,6 +620,7 @@ GameObject:
   - component: {fileID: 450435108095478249}
   - component: {fileID: 450435108095478251}
   - component: {fileID: 450435108095478250}
+  - component: {fileID: 2312401810544495952}
   m_Layer: 5
   m_Name: NameText
   m_TagString: Untagged
@@ -678,6 +745,18 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!225 &2312401810544495952
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 450435108095478248}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &450435108211919190
 GameObject:
   m_ObjectHideFlags: 0
@@ -689,6 +768,7 @@ GameObject:
   - component: {fileID: 450435108211919191}
   - component: {fileID: 450435108211919185}
   - component: {fileID: 450435108211919184}
+  - component: {fileID: 6755527824624847367}
   m_Layer: 5
   m_Name: Image Border
   m_TagString: Untagged
@@ -755,6 +835,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!225 &6755527824624847367
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 450435108211919190}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &450435108323177728
 GameObject:
   m_ObjectHideFlags: 0
@@ -766,6 +858,7 @@ GameObject:
   - component: {fileID: 450435108323177729}
   - component: {fileID: 450435108323177731}
   - component: {fileID: 450435108323177730}
+  - component: {fileID: 219627753421741427}
   m_Layer: 5
   m_Name: HP Border
   m_TagString: Untagged
@@ -832,6 +925,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!225 &219627753421741427
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 450435108323177728}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &450435108397830334
 GameObject:
   m_ObjectHideFlags: 0
@@ -843,6 +948,7 @@ GameObject:
   - component: {fileID: 450435108397830335}
   - component: {fileID: 450435108397830329}
   - component: {fileID: 450435108397830328}
+  - component: {fileID: 2730754909443758819}
   m_Layer: 5
   m_Name: Attack
   m_TagString: Untagged
@@ -967,6 +1073,18 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!225 &2730754909443758819
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 450435108397830334}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &450435108531517903
 GameObject:
   m_ObjectHideFlags: 0
@@ -978,6 +1096,7 @@ GameObject:
   - component: {fileID: 450435108531517896}
   - component: {fileID: 450435108531517898}
   - component: {fileID: 450435108531517897}
+  - component: {fileID: 5072378393247205311}
   m_Layer: 5
   m_Name: Description Border
   m_TagString: Untagged
@@ -1044,6 +1163,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!225 &5072378393247205311
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 450435108531517903}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &450435108930944055
 GameObject:
   m_ObjectHideFlags: 0
@@ -1055,6 +1186,7 @@ GameObject:
   - component: {fileID: 450435108930944048}
   - component: {fileID: 450435108930944050}
   - component: {fileID: 450435108930944049}
+  - component: {fileID: 700159740616747325}
   m_Layer: 5
   m_Name: Name
   m_TagString: Untagged
@@ -1121,6 +1253,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!225 &700159740616747325
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 450435108930944055}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &450435108950556312
 GameObject:
   m_ObjectHideFlags: 0
@@ -1132,6 +1276,7 @@ GameObject:
   - component: {fileID: 450435108950556313}
   - component: {fileID: 450435108950556315}
   - component: {fileID: 450435108950556314}
+  - component: {fileID: 507565057865732268}
   m_Layer: 5
   m_Name: Speed Border
   m_TagString: Untagged
@@ -1198,6 +1343,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!225 &507565057865732268
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 450435108950556312}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &450435109034539318
 GameObject:
   m_ObjectHideFlags: 0
@@ -1209,6 +1366,7 @@ GameObject:
   - component: {fileID: 450435109034539319}
   - component: {fileID: 450435109034539313}
   - component: {fileID: 450435109034539312}
+  - component: {fileID: 3437316469968160150}
   m_Layer: 5
   m_Name: Border
   m_TagString: Untagged
@@ -1281,6 +1439,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!225 &3437316469968160150
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 450435109034539318}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &450435109151096629
 GameObject:
   m_ObjectHideFlags: 0
@@ -1292,6 +1462,7 @@ GameObject:
   - component: {fileID: 450435109151096630}
   - component: {fileID: 450435109151096624}
   - component: {fileID: 450435109151096631}
+  - component: {fileID: 3410767401384294132}
   m_Layer: 5
   m_Name: Speed Image
   m_TagString: Untagged
@@ -1357,6 +1528,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!225 &3410767401384294132
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 450435109151096629}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &450435109167050890
 GameObject:
   m_ObjectHideFlags: 0
@@ -1368,6 +1551,7 @@ GameObject:
   - component: {fileID: 450435109167050891}
   - component: {fileID: 450435109167050997}
   - component: {fileID: 450435109167050996}
+  - component: {fileID: 8737463366463204565}
   m_Layer: 5
   m_Name: Card Description
   m_TagString: Untagged
@@ -1492,6 +1676,18 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!225 &8737463366463204565
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 450435109167050890}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &450435109181639991
 GameObject:
   m_ObjectHideFlags: 0
@@ -1503,6 +1699,7 @@ GameObject:
   - component: {fileID: 450435109181639984}
   - component: {fileID: 450435109181639986}
   - component: {fileID: 450435109181639985}
+  - component: {fileID: 6011560615103584293}
   m_Layer: 5
   m_Name: Attack Border
   m_TagString: Untagged
@@ -1569,3 +1766,15 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!225 &6011560615103584293
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 450435109181639991}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
