@@ -7,16 +7,6 @@ public class DisplayCard : MonoBehaviour
 
     public Card displayCard;
 
-    public int id;
-    public string cardName;
-    public string image;
-    public string description;
-    public int attack;
-    public int hp;
-    public int cost;
-    public int speed;
-    public Sprite spriteImage;
-
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI descriptionText;
     public TextMeshProUGUI attackText;
@@ -29,32 +19,14 @@ public class DisplayCard : MonoBehaviour
     void Start()
     {
 
-        
+        nameText.text = displayCard.cardName;
+        if (descriptionText) descriptionText.text = displayCard.description;
+        attackText.text = displayCard.attack.ToString();
+        hpText.text = displayCard.hp.ToString();
+        costText.text = displayCard.cost.ToString();
+        cardImage.sprite = displayCard.spriteImage;
 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-        id = displayCard.id;
-        cardName = displayCard.cardName;
-        image = displayCard.image;
-        description = displayCard.description;
-        attack = displayCard.attack;
-        hp = displayCard.hp;
-        cost = displayCard.cost;
-        speed = displayCard.speed;
-        spriteImage = displayCard.spriteImage;
-
-        nameText.text = " " + cardName;
-        descriptionText.text = " " + description;
-        attackText.text = " " + attack;
-        hpText.text = " " + hp;
-        costText.text = " " + cost;
-        cardImage.sprite = spriteImage;
-
-        switch (speed)
+        switch (displayCard.speed)
         {
             case 3:
                 speedImage.sprite = Resources.Load<Sprite>("mental");
@@ -66,7 +38,15 @@ public class DisplayCard : MonoBehaviour
                 speedImage.sprite = Resources.Load<Sprite>("melee");
                 break;
         }
-      
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+
+
 
     }
 }

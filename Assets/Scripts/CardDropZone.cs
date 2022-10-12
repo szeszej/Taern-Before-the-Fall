@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.UIElements;
 
 public class CardDropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerExitHandler
 {
@@ -10,18 +7,38 @@ public class CardDropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, I
     public GameObject Battlefield;
     public GameObject DiscardPile;
 
+    private GameObject CardOnBattlefield;
+    private GameObject CardToDiscard;
+
+    public GameObject CardOnBattlefieldPrefab;
+    public GameObject CardInDiscardPrefab;
+
+
     public void OnPointerEnter(PointerEventData eventData)
     {
 
     }
-
     public void OnDrop(PointerEventData eventData)
     {
+        //if there's already a card in the slot, it has to be discarded
         if (this.transform.childCount > 0)
         {
-            this.transform.GetChild(0).SetParent(DiscardPile.transform);
+            CardToDiscard = Instantiate(CardInDiscardPrefab, transform.position, transform.rotation);
+            CardToDiscard.GetComponent<DisplayCard>().displayCard = CardDatabase.cardList[CardOnBattlefield.GetComponent<DisplayCard>().displayCard.id].Clone();
+            Destroy(CardOnBattlefield);
+            CardToDiscard.transform.SetParent(DiscardPile.transform);
+            CardToDiscard.transform.localScale = Vector3.one;
+            DiscardPile.GetComponent<DiscardPile>().cardsInDiscard.Add(CardToDiscard.GetComponent<DisplayCard>().displayCard);
         }
-        eventData.pointerDrag.transform.SetParent(this.transform);
+        //in any case, a new look needs to be applied to the card so that it fits
+        CardOnBattlefield = Instantiate(CardOnBattlefieldPrefab, transform.position, transform.rotation);
+        CardOnBattlefield.GetComponent<DisplayCard>().displayCard = eventData.pointerDrag.GetComponent<DisplayCard>().displayCard;
+        CardOnBattlefield.GetComponent<CanvasGroup>().blocksRaycasts = false;
+        CardOnBattlefield.transform.SetParent(gameObject.transform);
+        CardOnBattlefield.transform.localScale = Vector3.one;
+        Destroy(eventData.pointerDrag);
+
+        //the card needs to be added to the battlefield for combat purposes
         switch (this.name)
         {
             case "Slot1":
@@ -44,12 +61,12 @@ public class CardDropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, I
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

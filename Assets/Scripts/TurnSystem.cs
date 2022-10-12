@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -16,7 +14,7 @@ public class TurnSystem : MonoBehaviour
     public TextMeshProUGUI manaText;
 
     public GameObject playerDeck;
-   
+
 
     // Start is called before the first frame update
     void Start()
@@ -37,7 +35,8 @@ public class TurnSystem : MonoBehaviour
         if (isSetupPhase)
         {
             phaseText.text = "Setup Phase";
-        } else
+        }
+        else
         {
             phaseText.text = "Combat Phase";
         }

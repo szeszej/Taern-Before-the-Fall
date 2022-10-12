@@ -1,13 +1,11 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class PlayerDeck : MonoBehaviour
 {
-    
+
     public List<Card> deck = new();
 
     public GameObject cardInDeck1;
@@ -32,7 +30,7 @@ public class PlayerDeck : MonoBehaviour
     {
         for (int i = 0; i < 30; i++)
         {
-            deck.Add(CardDatabase.cardList[Random.Range(0, 5)]);
+            deck.Add(CardDatabase.cardList[Random.Range(0, 5)].Clone());
         }
         StartGame();
 
@@ -86,11 +84,11 @@ public class PlayerDeck : MonoBehaviour
     {
         for (int i = 0; i < number; i++)
         {
-            
+
             yield return new WaitForSeconds(1);
             Draw(1);
         }
- 
+
     }
 
     public void Draw(int number)

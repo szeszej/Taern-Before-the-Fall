@@ -1,14 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class DeckCount : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
 
-    
+
     public GameObject PlayerDeck;
     public GameObject Opponent;
     public GameObject PlayerDeckPanel;

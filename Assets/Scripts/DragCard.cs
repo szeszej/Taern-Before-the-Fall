@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -11,46 +9,41 @@ public class DragCard : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        if (this.transform.parent.tag != "DropSlot")
-        {
-            parentToRetunTo = this.transform.parent;
-            originalIndex = this.transform.GetSiblingIndex();
-            this.transform.SetParent(GameObject.Find("Canvas").transform);
-            GetComponent<CanvasGroup>().blocksRaycasts = false;
-        }            
+        //let's make sure we remember where we came from
+        parentToRetunTo = this.transform.parent;
+        originalIndex = this.transform.GetSiblingIndex();
+        this.transform.SetParent(GameObject.Find("Canvas").transform);
+        GetComponent<CanvasGroup>().blocksRaycasts = false;
+
     }
 
     public void OnDrag(PointerEventData eventData)
     {
 
-            this.transform.position = eventData.pointerCurrentRaycast.worldPosition;
- 
+        this.transform.position = eventData.pointerCurrentRaycast.worldPosition;
+
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
+        //if not a drop zone, let's return whence we came
         if (eventData.pointerEnter.tag != "DropSlot")
         {
             this.transform.SetParent(parentToRetunTo);
             this.transform.SetSiblingIndex(originalIndex);
             GetComponent<CanvasGroup>().blocksRaycasts = true;
-        } else
-        {
-            parentToRetunTo = this.transform.parent;
-            this.enabled = false;
         }
 
-        
     }
 }
