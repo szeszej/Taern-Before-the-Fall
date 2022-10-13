@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - DropSlot
+  - CardOnBattlefield
   layers:
   - Default
   - TransparentFX

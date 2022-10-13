@@ -59,4 +59,9 @@ public class TurnSystem : MonoBehaviour
         turnText.text = "Turn: " + turn.ToString();
         playerDeck.GetComponent<PlayerDeck>().Draw(1);
     }
+
+    public void Set12Mana()
+    {
+        currentMana = 12;
+    }
 }

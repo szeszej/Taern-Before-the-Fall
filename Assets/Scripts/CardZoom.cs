@@ -15,7 +15,7 @@ public class CardZoom : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public void OnPointerEnter(PointerEventData eventData)
     {
             ZoomedCard = Instantiate(ZoomedCardPrefab, transform.position, transform.rotation);
-            ZoomedCard.GetComponent<DisplayCard>().displayCard = eventData.pointerEnter.GetComponent<DisplayCard>().displayCard.Clone();
+            ZoomedCard.GetComponent<DisplayCard>().displayCard = eventData.pointerEnter.GetComponent<DisplayCard>().displayCard;
             ZoomedCard.transform.SetParent(ZoomedCardField.transform);
             ZoomedCard.transform.localScale = new Vector3(2, 2, 2);
     }
@@ -34,9 +34,6 @@ public class CardZoom : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     // Update is called once per frame
     void Update()
     {
-        if (ZoomedCardField.transform.childCount > 1)
-        {
-            Destroy(ZoomedCardField.transform.GetChild(0).gameObject);
-        }
+       
     }
 }
