@@ -39,6 +39,8 @@ public class DisplayCard : MonoBehaviour
                 break;
         }
 
+        displayCard.cardObject = gameObject;
+
     }
 
     // Update is called once per frame

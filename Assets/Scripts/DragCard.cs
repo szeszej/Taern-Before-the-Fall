@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -47,12 +46,13 @@ public class DragCard : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 
     public void OnEndDrag(PointerEventData eventData)
     {
-  
+
         if (eventData.pointerEnter.tag == "DropSlot" && checkMana(gameObject.GetComponent<DisplayCard>().displayCard.cost))
         {
             Mana.GetComponent<TurnSystem>().currentMana -= gameObject.GetComponent<DisplayCard>().displayCard.cost;
             eventData.pointerEnter.GetComponent<CardDropZone>().PlayCard(gameObject);
-        } else
+        }
+        else
         {
             //if not a drop zone, let's return whence we came
             this.transform.SetParent(parentToRetunTo);
@@ -68,11 +68,12 @@ public class DragCard : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
         if (cost <= Mana.GetComponent<TurnSystem>().currentMana)
         {
             return true;
-        } else
+        }
+        else
         {
             return false;
         }
-        
+
     }
 
 }

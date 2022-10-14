@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.Rendering;
 
 public class CardZoom : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
@@ -14,10 +11,10 @@ public class CardZoom : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-            ZoomedCard = Instantiate(ZoomedCardPrefab, transform.position, transform.rotation);
-            ZoomedCard.GetComponent<DisplayCard>().displayCard = eventData.pointerEnter.GetComponent<DisplayCard>().displayCard;
-            ZoomedCard.transform.SetParent(ZoomedCardField.transform);
-            ZoomedCard.transform.localScale = new Vector3(2, 2, 2);
+        ZoomedCard = Instantiate(ZoomedCardPrefab, transform.position, transform.rotation);
+        ZoomedCard.GetComponent<DisplayCard>().displayCard = eventData.pointerEnter.GetComponent<DisplayCard>().displayCard;
+        ZoomedCard.transform.SetParent(ZoomedCardField.transform);
+        ZoomedCard.transform.localScale = new Vector3(2, 2, 2);
     }
 
     public void OnPointerExit(PointerEventData eventData)
@@ -34,6 +31,6 @@ public class CardZoom : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     // Update is called once per frame
     void Update()
     {
-       
+
     }
 }

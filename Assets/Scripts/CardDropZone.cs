@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -9,7 +8,6 @@ public class CardDropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, I
     public GameObject DiscardPile;
 
     private GameObject CardOnBattlefield;
-    private GameObject CardToDiscard;
 
     public GameObject CardOnBattlefieldPrefab;
     public GameObject CardInDiscardPrefab;
@@ -36,38 +34,44 @@ public class CardDropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, I
     public void PlayCard(GameObject PlayedCard)
     {
 
-            //if there's already a card in the slot, it has to be discarded
-            if (this.transform.childCount > 0)
-            {
-                CardToDiscard = Instantiate(CardInDiscardPrefab, transform.position, transform.rotation);
-                CardToDiscard.GetComponent<DisplayCard>().displayCard = CardDatabase.cardList[CardOnBattlefield.GetComponent<DisplayCard>().displayCard.id].Clone();
-                Destroy(CardOnBattlefield.gameObject);
-                CardToDiscard.transform.SetParent(DiscardPile.transform);
-                CardToDiscard.transform.localScale = Vector3.one;
-                DiscardPile.GetComponent<DiscardPile>().cardsInDiscard.Add(CardToDiscard.GetComponent<DisplayCard>().displayCard);
-            }
-            //in any case, a new look needs to be applied to the card so that it fits
-            CardOnBattlefield = Instantiate(CardOnBattlefieldPrefab, transform.position, transform.rotation);
-            CardOnBattlefield.GetComponent<DisplayCard>().displayCard = PlayedCard.GetComponent<DisplayCard>().displayCard;
-            CardOnBattlefield.transform.SetParent(gameObject.transform);
-            CardOnBattlefield.transform.localScale = Vector3.one;
-            Destroy(PlayedCard.gameObject);
+        //if there's already a card in the slot, it has to be discarded
+        if (this.transform.childCount > 0)
+        {
+            GameObject CardToDiscard = Instantiate(CardInDiscardPrefab, transform.position, transform.rotation);
+            CardToDiscard.GetComponent<DisplayCard>().displayCard = CardDatabase.cardList[CardOnBattlefield.GetComponent<DisplayCard>().displayCard.id].Clone();
+            Destroy(CardOnBattlefield.gameObject);
+            CardToDiscard.transform.SetParent(DiscardPile.transform);
+            CardToDiscard.transform.localScale = Vector3.one;
+            DiscardPile.GetComponent<DiscardPile>().cardsInDiscard.Add(CardToDiscard.GetComponent<DisplayCard>().displayCard);
+        }
+        //in any case, a new look needs to be applied to the card so that it fits
+        CardOnBattlefield = Instantiate(CardOnBattlefieldPrefab, transform.position, transform.rotation);
+        CardOnBattlefield.GetComponent<DisplayCard>().displayCard = PlayedCard.GetComponent<DisplayCard>().displayCard;
+        CardOnBattlefield.transform.SetParent(gameObject.transform);
+        CardOnBattlefield.transform.localScale = Vector3.one;
+        Destroy(PlayedCard.gameObject);
 
-            //the card needs to be added to the battlefield for combat purposes
-            switch (this.name)
-            {
-                case "Slot1":
-                    Battlefield.GetComponent<Battlefield>().cardsOnBattlefield[0] = PlayedCard.GetComponent<DisplayCard>().displayCard;
-                    break;
-                case "Slot2":
-                    Battlefield.GetComponent<Battlefield>().cardsOnBattlefield[1] = PlayedCard.GetComponent<DisplayCard>().displayCard;
-                    break;
-                case "Slot3":
-                    Battlefield.GetComponent<Battlefield>().cardsOnBattlefield[2] = PlayedCard.GetComponent<DisplayCard>().displayCard;
-                    break;
-            }
+        //the card needs to be added to the battlefield for combat purposes
+        switch (this.name)
+        {
+            case "Slot1":
+                Battlefield.GetComponent<Battlefield>().cardsOnBattlefield[0] = PlayedCard.GetComponent<DisplayCard>().displayCard;
+                break;
+            case "Slot2":
+                Battlefield.GetComponent<Battlefield>().cardsOnBattlefield[1] = PlayedCard.GetComponent<DisplayCard>().displayCard;
+                break;
+            case "Slot3":
+                Battlefield.GetComponent<Battlefield>().cardsOnBattlefield[2] = PlayedCard.GetComponent<DisplayCard>().displayCard;
+                break;
+            case "Slot4":
+                Battlefield.GetComponent<Battlefield>().cardsOnBattlefield[3] = PlayedCard.GetComponent<DisplayCard>().displayCard;
+                break;
+            case "Slot5":
+                Battlefield.GetComponent<Battlefield>().cardsOnBattlefield[4] = PlayedCard.GetComponent<DisplayCard>().displayCard;
+                break;
+        }
 
-            if (cardWasPlayed != null) cardWasPlayed();
+        if (cardWasPlayed != null) cardWasPlayed();
     }
 
     public void OnPointerExit(PointerEventData eventData)

@@ -14,8 +14,8 @@ public class Battlefield : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        cardsOnBattlefield = new Card[3];
-        opponentCardsOnBattlefield = new Card[3];
+        cardsOnBattlefield = new Card[5];
+        opponentCardsOnBattlefield = new Card[5];
 
         for (int i = 0; i < opponentBattlefieldZones.Length; i++)
         {

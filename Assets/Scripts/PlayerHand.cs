@@ -6,7 +6,6 @@ public class PlayerHand : MonoBehaviour
 
     public GameObject Hand;
     public GameObject CardInHand;
-    public GameObject NewCard;
 
     private void OnEnable()
     {
@@ -22,7 +21,7 @@ public class PlayerHand : MonoBehaviour
     void PopulateHand(Card card)
     {
 
-        NewCard = Instantiate(CardInHand, transform.position, transform.rotation);
+        GameObject NewCard = Instantiate(CardInHand, transform.position, transform.rotation);
         NewCard.GetComponent<DisplayCard>().displayCard = card;
 
     }

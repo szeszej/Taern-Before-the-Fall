@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 [System.Serializable]
 
@@ -13,6 +12,7 @@ public class Card
     public int cost;
     public int speed;
     public Sprite spriteImage;
+    public GameObject cardObject;
 
     public Card() { }
 
