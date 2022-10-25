@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 35311773}
   - component: {fileID: 35311772}
   - component: {fileID: 35311771}
+  - component: {fileID: 35311774}
   m_Layer: 5
   m_Name: OpponentSlot1
   m_TagString: DropSlot
@@ -226,6 +227,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 35311769}
   m_CullTransparentMesh: 1
+--- !u!114 &35311774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 35311769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fc19c64c541ad847b63b97f351d420c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Battlefield: {fileID: 1860054729}
+  DiscardPile: {fileID: 1798081177}
+  CardInDiscardPrefab: {fileID: 450435107724423964, guid: 0153b639b90d87b4e90601ea8a3dff77, type: 3}
 --- !u!1 &54382759
 GameObject:
   m_ObjectHideFlags: 0
@@ -605,6 +621,7 @@ GameObject:
   - component: {fileID: 112965916}
   - component: {fileID: 112965915}
   - component: {fileID: 112965914}
+  - component: {fileID: 112965917}
   m_Layer: 5
   m_Name: OpponentSlot2
   m_TagString: DropSlot
@@ -696,6 +713,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 112965912}
   m_CullTransparentMesh: 1
+--- !u!114 &112965917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 112965912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fc19c64c541ad847b63b97f351d420c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Battlefield: {fileID: 1860054729}
+  DiscardPile: {fileID: 1798081177}
+  CardInDiscardPrefab: {fileID: 450435107724423964, guid: 0153b639b90d87b4e90601ea8a3dff77, type: 3}
 --- !u!1 &134451971
 GameObject:
   m_ObjectHideFlags: 0
@@ -2107,6 +2139,7 @@ GameObject:
   - component: {fileID: 490380090}
   - component: {fileID: 490380089}
   - component: {fileID: 490380088}
+  - component: {fileID: 490380091}
   m_Layer: 5
   m_Name: OpponentSlot4
   m_TagString: DropSlot
@@ -2198,6 +2231,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 490380086}
   m_CullTransparentMesh: 1
+--- !u!114 &490380091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 490380086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fc19c64c541ad847b63b97f351d420c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Battlefield: {fileID: 1860054729}
+  DiscardPile: {fileID: 1798081177}
+  CardInDiscardPrefab: {fileID: 450435107724423964, guid: 0153b639b90d87b4e90601ea8a3dff77, type: 3}
 --- !u!1 &508934252 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2147782536673363795, guid: bf2e9519aca65fc4a9c68ce659467e62, type: 3}
@@ -2574,7 +2622,9 @@ MonoBehaviour:
   maxMana: 0
   currentMana: 0
   manaText: {fileID: 1448756515}
+  Battlefield: {fileID: 1860054729}
   playerDeck: {fileID: 1675174123}
+  CombatSystem: {fileID: 1568230643}
 --- !u!4 &587138961
 Transform:
   m_ObjectHideFlags: 0
@@ -2713,7 +2763,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Hand: {fileID: 604724711}
   CardInHand: {fileID: 450435107724423964, guid: 6e727c4be24bacf4ba930b5f4eaeec96, type: 3}
-  NewCard: {fileID: 450435107724423964, guid: 6e727c4be24bacf4ba930b5f4eaeec96, type: 3}
 --- !u!1 &610739298
 GameObject:
   m_ObjectHideFlags: 0
@@ -6039,6 +6088,7 @@ GameObject:
   - component: {fileID: 1442060360}
   - component: {fileID: 1442060359}
   - component: {fileID: 1442060358}
+  - component: {fileID: 1442060361}
   m_Layer: 5
   m_Name: OpponentSlot3
   m_TagString: DropSlot
@@ -6130,6 +6180,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1442060356}
   m_CullTransparentMesh: 1
+--- !u!114 &1442060361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1442060356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fc19c64c541ad847b63b97f351d420c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Battlefield: {fileID: 1860054729}
+  DiscardPile: {fileID: 1798081177}
+  CardInDiscardPrefab: {fileID: 450435107724423964, guid: 0153b639b90d87b4e90601ea8a3dff77, type: 3}
 --- !u!1 &1446352917
 GameObject:
   m_ObjectHideFlags: 0
@@ -6676,6 +6741,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1567250949}
   m_CullTransparentMesh: 1
+--- !u!1 &1568230643
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1568230645}
+  - component: {fileID: 1568230644}
+  m_Layer: 0
+  m_Name: CombatSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1568230644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1568230643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e34fc869630c49a448af7ec25e7195d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerHp: {fileID: 721548250}
+  OpponentHp: {fileID: 956152324}
+--- !u!4 &1568230645
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1568230643}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.12572706, y: -0.24221718, z: 541.95264}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1626363949
 GameObject:
   m_ObjectHideFlags: 0
@@ -9355,6 +9466,7 @@ GameObject:
   - component: {fileID: 2047737860}
   - component: {fileID: 2047737859}
   - component: {fileID: 2047737858}
+  - component: {fileID: 2047737861}
   m_Layer: 5
   m_Name: OpponentSlot5
   m_TagString: DropSlot
@@ -9446,6 +9558,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2047737856}
   m_CullTransparentMesh: 1
+--- !u!114 &2047737861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2047737856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fc19c64c541ad847b63b97f351d420c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Battlefield: {fileID: 1860054729}
+  DiscardPile: {fileID: 1798081177}
+  CardInDiscardPrefab: {fileID: 450435107724423964, guid: 0153b639b90d87b4e90601ea8a3dff77, type: 3}
 --- !u!1 &2058330173 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2147782536673363795, guid: bf2e9519aca65fc4a9c68ce659467e62, type: 3}

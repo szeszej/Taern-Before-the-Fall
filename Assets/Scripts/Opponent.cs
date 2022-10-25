@@ -93,5 +93,11 @@ public class Opponent : MonoBehaviour
                 cardInDeck10.SetActive(false);
                 break;
         }
+        hpText.text = hp.ToString();
+    }
+
+    public void TakeDamage(int damage)
+    {
+        hp -= damage;
     }
 }

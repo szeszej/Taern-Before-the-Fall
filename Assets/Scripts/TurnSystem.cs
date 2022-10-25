@@ -13,7 +13,9 @@ public class TurnSystem : MonoBehaviour
     public int currentMana;
     public TextMeshProUGUI manaText;
 
+    public GameObject Battlefield;
     public GameObject playerDeck;
+    public GameObject CombatSystem;
 
 
     // Start is called before the first frame update
@@ -46,7 +48,7 @@ public class TurnSystem : MonoBehaviour
     public void EndSetupPhase()
     {
         isSetupPhase = false;
-        //run combat here
+        CombatSystem.GetComponent<Combat>().CommenceCombat(Battlefield.GetComponent<Battlefield>().playerBattlefieldZones, Battlefield.GetComponent<Battlefield>().opponentBattlefieldZones);
 
     }
 

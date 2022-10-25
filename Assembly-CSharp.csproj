@@ -58,19 +58,21 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\CardDatabase.cs" />
     <Compile Include="Assets\Scripts\Opponent.cs" />
+    <Compile Include="Assets\Scripts\OppCardDropZone.cs" />
     <Compile Include="Assets\Scripts\PlayerHp.cs" />
     <Compile Include="Assets\Scripts\TurnSystem.cs" />
-    <Compile Include="Assets\Scripts\DisplayCard.cs" />
-    <Compile Include="Assets\Scripts\PlayerHand.cs" />
-    <Compile Include="Assets\Scripts\DeckCount.cs" />
-    <Compile Include="Assets\Scripts\PlayerDeck.cs" />
-    <Compile Include="Assets\Scripts\Card.cs" />
-    <Compile Include="Assets\Scripts\CardToHand.cs" />
-    <Compile Include="Assets\Scripts\DragCard.cs" />
-    <Compile Include="Assets\Scripts\Battlefield.cs" />
+    <Compile Include="Assets\Scripts\CardZoom.cs" />
     <Compile Include="Assets\Scripts\CardDropZone.cs" />
     <Compile Include="Assets\Scripts\DiscardPile.cs" />
-    <Compile Include="Assets\Scripts\CardZoom.cs" />
+    <Compile Include="Assets\Scripts\DisplayCard.cs" />
+    <Compile Include="Assets\Scripts\PlayerHand.cs" />
+    <Compile Include="Assets\Scripts\Battlefield.cs" />
+    <Compile Include="Assets\Scripts\DeckCount.cs" />
+    <Compile Include="Assets\Scripts\PlayerDeck.cs" />
+    <Compile Include="Assets\Scripts\DragCard.cs" />
+    <Compile Include="Assets\Scripts\Combat.cs" />
+    <Compile Include="Assets\Scripts\Card.cs" />
+    <Compile Include="Assets\Scripts\CardToHand.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

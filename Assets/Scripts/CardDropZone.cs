@@ -37,12 +37,7 @@ public class CardDropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, I
         //if there's already a card in the slot, it has to be discarded
         if (this.transform.childCount > 0)
         {
-            GameObject CardToDiscard = Instantiate(CardInDiscardPrefab, transform.position, transform.rotation);
-            CardToDiscard.GetComponent<DisplayCard>().displayCard = CardDatabase.cardList[CardOnBattlefield.GetComponent<DisplayCard>().displayCard.id].Clone();
-            Destroy(CardOnBattlefield.gameObject);
-            CardToDiscard.transform.SetParent(DiscardPile.transform);
-            CardToDiscard.transform.localScale = Vector3.one;
-            DiscardPile.GetComponent<DiscardPile>().cardsInDiscard.Add(CardToDiscard.GetComponent<DisplayCard>().displayCard);
+            DiscardCard(CardOnBattlefield);
         }
         //in any case, a new look needs to be applied to the card so that it fits
         CardOnBattlefield = Instantiate(CardOnBattlefieldPrefab, transform.position, transform.rotation);
@@ -100,6 +95,16 @@ public class CardDropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, I
     {
         DragCard.cardIsDragged -= blockRaycasts;
         DragCard.cardIsNotDragged -= blockRaycasts;
+    }
+
+    public void DiscardCard(GameObject discardedCard)
+    {
+        GameObject CardToDiscard = Instantiate(CardInDiscardPrefab, transform.position, transform.rotation);
+        CardToDiscard.GetComponent<DisplayCard>().displayCard = CardDatabase.cardList[discardedCard.GetComponent<DisplayCard>().displayCard.id].Clone();
+        Destroy(discardedCard.gameObject);
+        CardToDiscard.transform.SetParent(DiscardPile.transform);
+        CardToDiscard.transform.localScale = Vector3.one;
+        DiscardPile.GetComponent<DiscardPile>().cardsInDiscard.Add(CardToDiscard.GetComponent<DisplayCard>().displayCard);
     }
 
 
