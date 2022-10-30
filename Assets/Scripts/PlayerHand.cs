@@ -1,6 +1,7 @@
 using UnityEngine;
+using Mirror;
 
-public class PlayerHand : MonoBehaviour
+public class PlayerHand : NetworkBehaviour
 {
 
 
@@ -20,11 +21,10 @@ public class PlayerHand : MonoBehaviour
     // Update is called once per frame
     void PopulateHand(Card card)
     {
-
         GameObject NewCard = Instantiate(CardInHand, transform.position, transform.rotation);
         NewCard.GetComponent<DisplayCard>().displayCard = card;
         NewCard.GetComponent<DisplayCard>().displayCard.cardObject = NewCard.gameObject;
-
+        NetworkServer.Spawn(NewCard, connectionToClient);
     }
 
     private void OnDisable()
