@@ -1,13 +1,22 @@
 using UnityEngine;
+using Mirror;
 
-public class Combat : MonoBehaviour
+public class Combat : NetworkBehaviour
 {
 
-    public GameObject PlayerHp;
+    public GameObject PlayerManager;
     public GameObject OpponentHp;
 
     private GameObject[] playerZones;
     private GameObject[] opponentZones;
+
+    public override void OnStartClient()
+    {
+        base.OnStartClient();
+        NetworkIdentity networkIdentity = NetworkClient.connection.identity;
+        PlayerManager = networkIdentity.gameObject;
+
+    }
 
     public void CommenceCombat(GameObject[] playerSide, GameObject[] opponentSide)
     {
@@ -29,7 +38,7 @@ public class Combat : MonoBehaviour
             //if there's only a card on the opponent side
             else if (playerZones[i].transform.childCount == 0 && opponentZones[i].transform.childCount > 0)
             {
-                PlayerHp.GetComponent<PlayerHp>().TakeDamage(opponentZones[i].transform.GetChild(0).GetComponent<DisplayCard>().displayCard.attack);
+                PlayerManager.GetComponent<PlayerHp>().TakeDamage(opponentZones[i].transform.GetChild(0).GetComponent<DisplayCard>().displayCard.attack);
             }
         }
     }

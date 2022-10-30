@@ -104,6 +104,7 @@ public class CardDropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, I
         Destroy(discardedCard.gameObject);
         CardToDiscard.transform.SetParent(DiscardPile.transform);
         CardToDiscard.transform.localScale = Vector3.one;
+        CardToDiscard.GetComponent<DisplayCard>().displayCard.cardObject = CardToDiscard.gameObject;
         DiscardPile.GetComponent<DiscardPile>().cardsInDiscard.Add(CardToDiscard.GetComponent<DisplayCard>().displayCard);
     }
 

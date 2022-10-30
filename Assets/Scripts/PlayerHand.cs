@@ -14,7 +14,7 @@ public class PlayerHand : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        Hand = GameObject.Find("Hand");
     }
 
     // Update is called once per frame
@@ -23,6 +23,7 @@ public class PlayerHand : MonoBehaviour
 
         GameObject NewCard = Instantiate(CardInHand, transform.position, transform.rotation);
         NewCard.GetComponent<DisplayCard>().displayCard = card;
+        NewCard.GetComponent<DisplayCard>().displayCard.cardObject = NewCard.gameObject;
 
     }
 

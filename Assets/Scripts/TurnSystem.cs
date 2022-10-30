@@ -1,7 +1,8 @@
 using TMPro;
 using UnityEngine;
+using Mirror;
 
-public class TurnSystem : MonoBehaviour
+public class TurnSystem : NetworkBehaviour
 {
 
     public bool isSetupPhase;
@@ -14,9 +15,17 @@ public class TurnSystem : MonoBehaviour
     public TextMeshProUGUI manaText;
 
     public GameObject Battlefield;
-    public GameObject playerDeck;
+    public PlayerDeck PlayerDeck;
     public GameObject CombatSystem;
 
+
+    public override void OnStartClient()
+    {
+        base.OnStartClient();
+        NetworkIdentity networkIdentity = NetworkClient.connection.identity;
+        PlayerDeck = networkIdentity.GetComponent<PlayerDeck>();
+
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -49,7 +58,7 @@ public class TurnSystem : MonoBehaviour
     {
         isSetupPhase = false;
         CombatSystem.GetComponent<Combat>().CommenceCombat(Battlefield.GetComponent<Battlefield>().playerBattlefieldZones, Battlefield.GetComponent<Battlefield>().opponentBattlefieldZones);
-
+        EndCombatPhase();
     }
 
     public void EndCombatPhase()
@@ -59,7 +68,7 @@ public class TurnSystem : MonoBehaviour
         maxMana += 1;
         currentMana = maxMana;
         turnText.text = "Turn: " + turn.ToString();
-        playerDeck.GetComponent<PlayerDeck>().Draw(1);
+        PlayerDeck.GetComponent<PlayerDeck>().CmdDraw(1);
     }
 
     public void Set12Mana()
