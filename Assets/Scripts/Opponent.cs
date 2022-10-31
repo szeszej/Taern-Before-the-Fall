@@ -34,9 +34,9 @@ public class Opponent : MonoBehaviour
 
     public TextMeshProUGUI manaText;
 
-    // Start is called before the first frame update
     void Start()
     {
+
         deckSize = 26;
         handSize = 4;
         hp = 30;

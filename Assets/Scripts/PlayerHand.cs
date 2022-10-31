@@ -15,7 +15,7 @@ public class PlayerHand : NetworkBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Hand = GameObject.Find("Hand");
+
     }
 
     // Update is called once per frame
@@ -24,7 +24,10 @@ public class PlayerHand : NetworkBehaviour
         GameObject NewCard = Instantiate(CardInHand, transform.position, transform.rotation);
         NewCard.GetComponent<DisplayCard>().displayCard = card;
         NewCard.GetComponent<DisplayCard>().displayCard.cardObject = NewCard.gameObject;
-        NetworkServer.Spawn(NewCard, connectionToClient);
+        NewCard.transform.SetParent(Hand.transform);
+        NewCard.transform.localScale = Vector3.one;
+        NewCard.transform.position = new Vector3(transform.position.x, transform.position.y, 0);
+        NewCard.transform.eulerAngles = new Vector3(25, 0, 0);
     }
 
     private void OnDisable()

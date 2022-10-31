@@ -17,16 +17,22 @@ public class PlayerDeck : NetworkBehaviour
     public override void OnStartServer()
     {
         base.OnStartServer();
+
+    }
+
+    public override void OnStartClient()
+    {
+        base.OnStartClient();
         for (int i = 0; i < 30; i++)
         {
             deck.Add(CardDatabase.cardList[Random.Range(0, 5)].Clone());
         }
-        StartGame();
 
     }
 
     public void StartGame()
     {
+
         StartCoroutine(DelayedDraw(4));
     }
 
@@ -36,23 +42,12 @@ public class PlayerDeck : NetworkBehaviour
         {
 
             yield return new WaitForSeconds(1);
-            RpcDraw(1);
+            Draw(1);
         }
 
     }
 
-    [Command]
-    public void CmdDraw(int number)
-    {
-        for (int i = 0; i < number; i++)
-        {
-            if (cardWasDrawn != null) cardWasDrawn(deck[0]);
-            deck.RemoveAt(0);
-        }
-    }
-
-    [ClientRpc]
-    public void RpcDraw(int number)
+    public void Draw(int number)
     {
         for (int i = 0; i < number; i++)
         {

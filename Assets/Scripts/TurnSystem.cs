@@ -19,17 +19,21 @@ public class TurnSystem : NetworkBehaviour
     public GameObject CombatSystem;
 
 
+    void OnEnable()
+    {
+        CardDropZone.cardWasPlayed += UpdateMana;
+    }
+
     public override void OnStartClient()
     {
         base.OnStartClient();
         NetworkIdentity networkIdentity = NetworkClient.connection.identity;
         PlayerDeck = networkIdentity.GetComponent<PlayerDeck>();
 
-    }
+        manaText = GameObject.Find("ManaText").GetComponent<TextMeshProUGUI>();
+        turnText = GameObject.Find("TurnNumber").GetComponent<TextMeshProUGUI>();
+        phaseText = GameObject.Find("PhaseText").GetComponent<TextMeshProUGUI>();
 
-    // Start is called before the first frame update
-    void Start()
-    {
         isSetupPhase = true;
         turn = 1;
 
@@ -37,25 +41,28 @@ public class TurnSystem : NetworkBehaviour
         currentMana = 1;
 
         turnText.text = "Turn: " + turn.ToString();
+        manaText.text = currentMana.ToString() + "/" + maxMana.ToString();
+
+
+
+    }
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        
 
     }
 
     // Update is called once per frame
-    void Update()
+    void UpdateMana()
     {
-        if (isSetupPhase)
-        {
-            phaseText.text = "Setup Phase";
-        }
-        else
-        {
-            phaseText.text = "Combat Phase";
-        }
         manaText.text = currentMana.ToString() + "/" + maxMana.ToString();
     }
 
     public void EndSetupPhase()
     {
+        phaseText.text = "Combat Phase";
         isSetupPhase = false;
         CombatSystem.GetComponent<Combat>().CommenceCombat(Battlefield.GetComponent<Battlefield>().playerBattlefieldZones, Battlefield.GetComponent<Battlefield>().opponentBattlefieldZones);
         EndCombatPhase();
@@ -68,11 +75,17 @@ public class TurnSystem : NetworkBehaviour
         maxMana += 1;
         currentMana = maxMana;
         turnText.text = "Turn: " + turn.ToString();
-        PlayerDeck.GetComponent<PlayerDeck>().CmdDraw(1);
+        PlayerDeck.GetComponent<PlayerDeck>().Draw(1);
+        phaseText.text = "Setup Phase";
     }
 
     public void Set12Mana()
     {
         currentMana = 12;
+    }
+
+    private void OnDisable()
+    {
+        CardDropZone.cardWasPlayed -= UpdateMana;
     }
 }

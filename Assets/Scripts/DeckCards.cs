@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Mirror;
 
-public class DeckCards : NetworkBehaviour
+public class DeckCards : MonoBehaviour
 {
 
     public GameObject cardInDeck1;
@@ -17,30 +16,24 @@ public class DeckCards : NetworkBehaviour
     public GameObject cardInDeck9;
     public GameObject cardInDeck10;
 
-    PlayerDeck PlayerDeck;
+    public GameObject PlayerManager;
 
     private void OnEnable()
     {
         PlayerDeck.cardWasDrawn += ChangeDeckSize;
     }
 
-    public override void OnStartClient()
-    {
-        base.OnStartClient();
-        NetworkIdentity networkIdentity = NetworkClient.connection.identity;
-        PlayerDeck = networkIdentity.GetComponent<PlayerDeck>();
-    }
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void ChangeDeckSize(Card card)
     {
-        switch (PlayerDeck.deck.Count)
+        switch (PlayerManager.GetComponent<PlayerDeck>().deck.Count)
         {
             case < 30 when cardInDeck1.activeSelf:
                 cardInDeck1.SetActive(false);

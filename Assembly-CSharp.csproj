@@ -72,8 +72,6 @@
     <Compile Include="Assets\Scripts\DragCard.cs" />
     <Compile Include="Assets\Scripts\Combat.cs" />
     <Compile Include="Assets\Scripts\Card.cs" />
-    <Compile Include="Assets\Scripts\CardToHand.cs" />
-    <Compile Include="Assets\Scripts\DrawCard.cs" />
     <Compile Include="Assets\Scripts\DeckCards.cs" />
   </ItemGroup>
   <ItemGroup>
