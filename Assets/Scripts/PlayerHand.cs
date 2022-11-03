@@ -21,13 +21,17 @@ public class PlayerHand : NetworkBehaviour
     // Update is called once per frame
     void PopulateHand(Card card)
     {
-        GameObject NewCard = Instantiate(CardInHand, transform.position, transform.rotation);
-        NewCard.GetComponent<DisplayCard>().displayCard = card;
-        NewCard.GetComponent<DisplayCard>().displayCard.cardObject = NewCard.gameObject;
-        NewCard.transform.SetParent(Hand.transform);
-        NewCard.transform.localScale = Vector3.one;
-        NewCard.transform.position = new Vector3(transform.position.x, transform.position.y, 0);
-        NewCard.transform.eulerAngles = new Vector3(25, 0, 0);
+        if (isLocalPlayer)
+        {
+            GameObject NewCard = Instantiate(CardInHand, transform.position, transform.rotation);
+            NewCard.GetComponent<DisplayCard>().displayCard = card;
+            NewCard.GetComponent<DisplayCard>().displayCard.cardObject = NewCard.gameObject;
+            NewCard.transform.SetParent(Hand.transform);
+            NewCard.transform.localScale = Vector3.one;
+            NewCard.transform.position = new Vector3(transform.position.x, transform.position.y, 0);
+            NewCard.transform.eulerAngles = new Vector3(25, 0, 0);
+        }
+
     }
 
     private void OnDisable()

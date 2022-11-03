@@ -30,6 +30,12 @@ public class PlayerDeck : NetworkBehaviour
 
     }
 
+    public override void OnStartLocalPlayer()
+    {
+        base.OnStartLocalPlayer();  
+    }
+
+
     public void StartGame()
     {
 
